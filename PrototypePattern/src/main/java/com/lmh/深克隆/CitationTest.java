@@ -22,21 +22,22 @@ public class CitationTest {
         student.setName("张三");
         citation.setStudent(student);
 
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-
-
-        oos.writeObject(citation);
-
-        oos.flush();
-        oos.close();
-
-
-        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()));
-
-        Citation o = (Citation) ois.readObject();
-        o.getStudent().setName("历史");
+        //ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        //ObjectOutputStream oos = new ObjectOutputStream(baos);
+        //
+        //
+        //oos.writeObject(citation);
+        //
+        //oos.flush();
+        //oos.close();
+        //
+        //
+        //ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()));
+        //
+        //Citation o = (Citation) ois.readObject();
+        Citation clone = citation.clone();
+        clone.getStudent().setName("历史");
         System.out.println(citation);
-        System.out.println(o);
+        System.out.println(clone);
     }
 }
