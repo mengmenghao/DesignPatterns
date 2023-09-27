@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
  */
 public class ProxyFactory implements MethodInterceptor {
 
-    private TrainStation trainStation = new TrainStation();
+    //private TrainStation trainStation = new TrainStation();
 
     public TrainStation getProxyObject() {
         // 创建Enhancer对象，类似于jdk代理中的Proxy类
